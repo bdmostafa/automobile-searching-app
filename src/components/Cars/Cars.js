@@ -1,60 +1,62 @@
-import React, { useState } from 'react';
-import { Button, Container, Row, Spinner } from 'react-bootstrap';
-import Car from './Car';
-import './Cars.css';
-import fakeCars from '../../fakeData/fakeCars'
-import { useHistory } from 'react-router-dom';
+import React, { useContext, useState, useEffect } from "react";
+import { Button, Container, Row, Spinner } from "react-bootstrap";
+import Car from "./Car";
+import "./Cars.css";
+import fakeCars from "../../fakeData/fakeCars";
+import { useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
 
 const Cars = () => {
+  const { cars, setCars, search } = useContext(UserContext);
 
-    const [cars, setCars] = useState({});
-    
-    const [detailsCar, setDetailsCar] = useState({});
+  const [detailsCar, setDetailsCar] = useState({});
 
-    const history = useHistory();
+  const history = useHistory();
 
-    const handleCar = (id) => {
-        // Update state on which car is to be edited
-        const selectedCar = fakeCars.find(car => car._id === id);
-        setDetailsCar(selectedCar);
-        // Redirect to details car page
-        history.push(`/dashboard/user/details-car`);
-    }
+  const handleCar = (id) => {
+    // Update state on which car is to be edited
+    const selectedCar = fakeCars.find((car) => car._id === id);
+    setDetailsCar(selectedCar);
+    // Redirect to details car page
+    history.push(`/dashboard/user/details-car`);
+  };
 
-    return (
-        <Container className="text-center mb-5">
+  useEffect(() => {
+    setCars(fakeCars);
+  }, []);
 
-            <Row><h2 className="m-auto p-5">Featured Cars </h2></Row>
+  return (
+    <Container className="text-center mb-5">
+      <Row>
+        <h2 className="m-auto p-5">Featured Cars </h2>
+      </Row>
 
-            <Row className="justify-content-center">
-                {
-                    fakeCars.length === 0
-                    && 
-                    <Button className="m-5 m-auto" variant="primary" disabled>
-                        <Spinner
-                            as="span"
-                            animation="grow"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
-                        />
-                            Services Loading...
-                        </Button>
-                }
-                {
-                    fakeCars.length > 0
-                    && fakeCars.map(car =>
-                        <Car
-                            key={car._id}
-                            handleCar={handleCar}
-                            car={car}
-                        />
-                    )
-                }
-            </Row>
+      <Row className="justify-content-center">
+        {cars.length === 0 && (
+          <Button className="m-5 m-auto" variant="primary" disabled>
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Services Loading...
+          </Button>
+        )}
+        {/* {cars.length > 0 &&
+          cars.map((car) => (
+            <Car key={car._id} handleCar={handleCar} car={car} />
+          ))} */}
 
-        </Container>
-    );
+        {cars.length > 0 && 
+          cars.filter((car) => car.name.toLowerCase().includes(search.trim()))
+          .map((car) => (
+            <Car key={car._id} handleCar={handleCar} car={car} />
+          ))}
+      </Row>
+    </Container>
+  );
 };
 
 export default Cars;

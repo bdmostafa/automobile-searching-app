@@ -48,7 +48,7 @@ const Car = ({ car, handleCar }) => {
               variant="top"
               //   src={cars && `data:image/png;base64,${service.img.img}`}
               src={img}
-              className="w-75 m-3"
+              className="w-75 m-3 card-img-top"
             />
             <Card.Title>{name}</Card.Title>
             <Card.Text> {features} </Card.Text>
