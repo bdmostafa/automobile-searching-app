@@ -5,6 +5,7 @@ import Header from '../components/shared/Header/Header';
 import Testimonial from '../components/Testimonial/Testimonial';
 
 const Home = () => {
+    document.title = "Home Page | Automobile Searching App"
     return (
         <div>
             <Header />

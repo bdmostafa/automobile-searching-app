@@ -24,9 +24,6 @@ const Header = () => {
           The most efficient way to search your desired car from world-class
           brands and companies.
         </p>
-        <p>
-          <Button variant="primary">Learn More</Button>
-        </p>
         <div className="w-50 m-auto">
           <Form className="d-flex">
             <FormControl
