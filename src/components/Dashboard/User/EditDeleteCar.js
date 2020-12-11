@@ -66,15 +66,30 @@ const EditDeleteCar = () => {
     formData.append("file", data.carImage[0]);
     console.log(totalData)
 
+    fetch("/edit-car", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          alert(
+            `Congratulations! You have edited the car  ${name} info successfully.`
+          );
+          history.replace("/");
+        }
+      });
   };
 
   // Handle uplaod image/file
   const handleProjectFile = () => {
-    document.getElementById("project-file").click();
+    document.getElementById("car-img-file").click();
   };
 
   return (
     <Container>
+      <h2>Welcome to User's dashboard panel</h2>
+      <p>Fill up the form and edit or delete the car</p>
       <Form className="order-form" onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col>
@@ -230,7 +245,7 @@ const EditDeleteCar = () => {
               hidden
               name="carImage"
               type="file"
-              id="project-file"
+              id="car-img-file"
               ref={register({ required: true })}
               placeholder="Upload*"
             />

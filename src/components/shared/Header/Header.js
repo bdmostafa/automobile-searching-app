@@ -5,6 +5,7 @@ import { Jumbotron, Button, Form, FormControl } from "react-bootstrap";
 import logo from "../../../assets/images/logo.png";
 import { UserContext } from "../../../App";
 import { useLocation } from "react-router-dom";
+import NavBar from "./NavBar";
 
 const Header = () => {
   const { search, setSearch, setSearchBtn } = useContext(UserContext);
@@ -18,45 +19,41 @@ const Header = () => {
 
   return (
     <div className="container-fluid text-center">
-      <Jumbotron>
-
-        <img className="w-25 mb-3" src={logo} alt="" />
-
-        {(path === "/" || path === "/home") && (
-          <>
-            {" "}
-            <h2>Welcome to Automobile Searching App!</h2>
-            <p>
-              The most efficient way to search your desired car from world-class
-              brands and companies.
-            </p>
-            <div className="w-50 m-auto">
-              <Form className="d-flex">
-                <FormControl
-                  onChange={(e) => setSearch(e.target.value)}
-                  type="text"
-                  placeholder="Search"
-                  className="form-control"
-                />
-                <div className="ml-2">
+      <div style={{backgroundColor: "#e9ecef"}}>
+        <NavBar />
+      </div>
+      
+      {(path === "/" || path === "/home") && (
+        <Jumbotron className="jumbotronHeader">
+          <h2>Welcome to Automobile Searching App!</h2>
+          <p>
+            The most efficient way to search your desired car from world-class
+            brands and companies.
+          </p>
+          <div className="w-50 m-auto">
+            <Form className="d-flex">
+              <FormControl
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                placeholder="Search"
+                className="form-control"
+              />
+              <div className="ml-2">
+                {" "}
+                <Button
+                  onClick={handleSearchBtn}
+                  type="submit"
+                  variant="contained"
+                  className="btn btn-primary"
+                >
                   {" "}
-                  <Button
-                    onClick={handleSearchBtn}
-                    type="submit"
-                    variant="contained"
-                    className="btn btn-primary"
-                  >
-                    {" "}
-                    Submit
-                  </Button>
-                </div>
-              </Form>
-            </div>
-          </>
-        )}
-
-      </Jumbotron>
-
+                  Submit
+                </Button>
+              </div>
+            </Form>
+          </div>{" "}
+        </Jumbotron>
+      )}
     </div>
   );
 };

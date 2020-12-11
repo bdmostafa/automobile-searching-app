@@ -7,6 +7,7 @@ import AddCar from "./pages/AddCar";
 import DetailsCar from "./pages/DetailsCar";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 export const UserContext = createContext();
 
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route exact path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/dashboard/user/add-car">
             <AddCar />

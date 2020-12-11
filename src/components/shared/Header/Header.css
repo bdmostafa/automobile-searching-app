@@ -1,0 +1,30 @@
+.logoImg {
+    width: 150px;
+}
+
+.jumbotronHeader{
+    background: url("https://i.pinimg.com/originals/37/41/97/374197e848818ab9b642852057619921.jpg") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    min-height: 90vh;
+}
+
+.navLink {
+    align-items: center;
+}
+
+.navLink a {
+    color: #474747;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 2rem;
+    font-weight: 400;
+    margin-left: auto;
+}
+
+.navLink a:hover {
+    border-bottom: 3px solid #7AB259;
+    font-weight: 600;
+}
