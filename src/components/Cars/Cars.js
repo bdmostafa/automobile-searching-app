@@ -7,15 +7,13 @@ import { useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 
 const Cars = () => {
-  const { cars, setCars, search } = useContext(UserContext);
-
-  const [detailsCar, setDetailsCar] = useState({});
+  const { cars, setCars, search, setDetailsCar } = useContext(UserContext);
 
   const history = useHistory();
 
   const handleCar = (id) => {
     // Update state on which car is to be edited
-    const selectedCar = fakeCars.find((car) => car._id === id);
+    const selectedCar = cars.find((car) => car._id === id);
     setDetailsCar(selectedCar);
     // Redirect to details car page
     history.push(`/dashboard/user/details-car`);

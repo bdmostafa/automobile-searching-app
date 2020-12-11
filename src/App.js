@@ -14,6 +14,7 @@ function App() {
   const [cars, setCars] = useState({});
   const [search, setSearch] = useState("");
   const [searchBtn, setSearchBtn] = useState("");
+  const [detailsCar, setDetailsCar] = useState({});
 
   return (
     <UserContext.Provider
@@ -24,6 +25,8 @@ function App() {
         setSearch,
         searchBtn,
         setSearchBtn,
+        detailsCar, 
+        setDetailsCar
       }}
     >
       <Router>
