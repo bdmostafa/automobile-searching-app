@@ -1,11 +1,12 @@
 import React from "react";
-import { Image, Nav, Navbar } from "react-bootstrap";
+import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
 import logo from "../../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
+    <Container>
     <Navbar bg="#e9ecef" expand="lg">
       <Navbar.Brand>
         <Link to="/">
@@ -21,6 +22,7 @@ const NavBar = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </Container>
   );
 };
 

@@ -8,7 +8,15 @@
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
-    min-height: 90vh;
+    min-height: 60vh;
+}
+
+.jumbotronHeader h2 {
+    margin-top: 100px;
+}
+
+.jumbotronHeader__search {
+    background-color: #e9ecef
 }
 
 .navLink {

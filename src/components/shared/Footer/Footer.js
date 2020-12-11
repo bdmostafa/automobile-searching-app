@@ -52,7 +52,7 @@ const Footer = () => {
             </Row>
           )}
 
-          <Row>
+          <Row className="pb-0 pt-0 mb-0">
             <Col className="text-left p-2 text-decoration-none">
               <p>
                 &copy;Copyright {new Date().getFullYear()}. Automobile Searching

@@ -7,6 +7,8 @@ import "./User.css";
 
 const AddNewCar = () => {
 
+    const { setDetailsCar } = useContext(UserContext);
+
   const history = useHistory();
 
   const { register, errors, handleSubmit } = useForm();
@@ -46,18 +48,18 @@ const AddNewCar = () => {
 
     formData.append("total", totalData);
     formData.append("file", data.carImage[0]);
-    console.log(totalData)
 
-    fetch("/add-car", {
+    fetch("https://automobile-searching-app.herokuapp.com/add-car", {
       method: "POST",
       body: formData,
     })
       .then((res) => res.json())
-      .then((result) => {
+      .then(({id, result}) => {
         if (result) {
           alert(
             `Congratulations! You have added a new car  ${name} successfully.`
           );
+          setDetailsCar({...data,  _id: id});
           history.replace("/dashboard/user/details-car");
         }
       });
@@ -68,16 +70,11 @@ const AddNewCar = () => {
     document.getElementById("car-img-file").click();
   };
 
-  // Handle delete the car
-  const handleDelete = () => {
-
-  }
-
   return (
     <Container>
       <h2>Welcome to User's dashboard panel</h2>
       <p>Fill up the form and add a new car</p>
-      <Form className="order-form" onSubmit={handleSubmit(onSubmit)}>
+      <Form className="addNewForm" onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col>
             <Form.Control
@@ -240,10 +237,7 @@ const AddNewCar = () => {
         </Row>
         <br />
         <Button className="btn-brand send mt-0" type="submit" variant="info">
-          EDIT
-        </Button>
-        <Button onClick={handleDelete} className="btn-brand send mt-0" variant="info">
-          DELETE
+          Add
         </Button>
       </Form>
     </Container>

@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import "./Header.css";
 import { Jumbotron, Button, Form, FormControl } from "react-bootstrap";
-// import '../assets/css/bootstrap.min.css';
-import logo from "../../../assets/images/logo.png";
 import { UserContext } from "../../../App";
 import { useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
@@ -36,7 +34,7 @@ const Header = () => {
                 onChange={(e) => setSearch(e.target.value)}
                 type="text"
                 placeholder="Search"
-                className="form-control"
+                className="form-control jumbotronHeader__search"
               />
               <div className="ml-2">
                 {" "}

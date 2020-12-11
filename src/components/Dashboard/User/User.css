@@ -1,4 +1,10 @@
-.order-form input {
+.addNewForm {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+.addNewForm input {
     margin-bottom: 1rem;
     border-radius: 4px;
     width: 27rem;
@@ -29,4 +35,15 @@
     width: 150px;
     height: 50px;
     margin-top: 15px !important;
+}
+
+.error {
+    color: red;
+    margin-top: -1rem;
+    text-align: start;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-right: 20px;
 }

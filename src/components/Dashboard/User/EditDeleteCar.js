@@ -7,7 +7,6 @@ import "./User.css";
 
 const EditDeleteCar = () => {
   const { detailsCar } = useContext(UserContext);
-  console.log(detailsCar);
 
   const {
     _id,
@@ -48,6 +47,7 @@ const EditDeleteCar = () => {
     const formData = new FormData();
 
     const totalData = JSON.stringify({
+      _id,
       name,
       features,
       km,
@@ -64,11 +64,10 @@ const EditDeleteCar = () => {
 
     formData.append("total", totalData);
     formData.append("file", data.carImage[0]);
-    console.log(totalData)
 
-    fetch("/edit-car", {
-      method: "POST",
-      body: formData,
+    fetch(`https://automobile-searching-app.herokuapp.com/update-car/`, {
+      method: "PATCH",
+      body: formData
     })
       .then((res) => res.json())
       .then((result) => {
@@ -86,11 +85,28 @@ const EditDeleteCar = () => {
     document.getElementById("car-img-file").click();
   };
 
+  // Handle delete functionality
+  const handleDelete = () => {
+    fetch(`https://automobile-searching-app.herokuapp.com/delete-car`, {
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                _id,
+            },
+        })
+        .then(data => {
+            if(data){
+                alert("You have successfully deleted the car");
+                history.push("/home")
+            }
+        })
+  }
+
   return (
     <Container>
       <h2>Welcome to User's dashboard panel</h2>
       <p>Fill up the form and edit or delete the car</p>
-      <Form className="order-form" onSubmit={handleSubmit(onSubmit)}>
+      <Form className="addNewForm" onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col>
             <Form.Control
@@ -260,8 +276,15 @@ const EditDeleteCar = () => {
           </Col>
         </Row>
         <br />
-        <Button className="btn-brand send mt-0" type="submit" variant="info">
+        <Button className="btn-brand send mt-0 mr-5" type="submit" variant="info">
           EDIT
+        </Button>
+        <Button
+          onClick={handleDelete}
+          className="btn-brand send mt-0"
+          variant="info"
+        >
+          DELETE
         </Button>
       </Form>
     </Container>

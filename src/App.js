@@ -12,7 +12,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 export const UserContext = createContext();
 
 function App() {
-  const [cars, setCars] = useState({});
+  const [cars, setCars] = useState([]);
   const [search, setSearch] = useState("");
   const [searchBtn, setSearchBtn] = useState("");
   const [detailsCar, setDetailsCar] = useState({});

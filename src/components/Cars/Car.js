@@ -1,3 +1,5 @@
+import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Card, Col } from "react-bootstrap";
 
@@ -46,22 +48,31 @@ const Car = ({ car, handleCar }) => {
           <Card.Body>
             <Card.Img
               variant="top"
-              //   src={cars && `data:image/png;base64,${service.img.img}`}
-              src={img}
+              src={
+                car &&
+                `data:image/png;base64,${car.img.img ? car.img.img : car.img}`
+              }
               className="w-75 m-3 card-img-top"
             />
-            <Card.Title>{name}</Card.Title>
-            <Card.Text> {features} </Card.Text>
-            <Card.Text> {price} </Card.Text>
-            <Card.Text> {star} </Card.Text>
-            <Card.Text> {bestSeller && bestSeller} </Card.Text>
-            <Card.Text> {km} </Card.Text>
-            <Card.Text> {reviews} </Card.Text>
-            <Card.Text> {petrol && petrol} </Card.Text>
-            <Card.Text> {manual && manual} </Card.Text>
-            <Card.Text> {sport && sport} </Card.Text>
-            <Card.Text> {color} </Card.Text>
-            <Card.Text> {year} </Card.Text>
+            <Card.Title> Name: {name}</Card.Title>
+            <Card.Text> Features: {features} </Card.Text>
+            <Card.Text> Price: {price} </Card.Text>
+            <Card.Text>
+              {" "}
+              Stars:
+              <FontAwesomeIcon className="text-warning" icon={faStar} />
+              <FontAwesomeIcon className="text-warning" icon={faStar} />
+              <FontAwesomeIcon className="text-warning" icon={faStar} />
+              <FontAwesomeIcon className="text-warning" icon={faStarHalf} />
+              <FontAwesomeIcon className="text-warning" icon={faStarHalf} />
+              ({star}){" "}
+            </Card.Text>
+            <Card.Text> {bestSeller && "Best Seller"} </Card.Text>
+            <Card.Text>  {km}/km lifetime </Card.Text>
+            <Card.Text> Reviews: {reviews} </Card.Text>
+            <Card.Text> {petrol && "Petrol"} - {manual && "Manual"} -  {sport && "Sport"} </Card.Text>
+            <Card.Text> Main Color: {color} </Card.Text>
+            <Card.Text> Model Year: {year} </Card.Text>
           </Card.Body>
         </Card>
       </animated.div>
