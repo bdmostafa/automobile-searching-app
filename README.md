@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+![Automobile Searching App](https://user-images.githubusercontent.com/62140337/101913509-483a4b80-3bed-11eb-923d-b1e9d7fb0df9.png)
+![Automobile Searching App](https://user-images.githubusercontent.com/62140337/101913709-89caf680-3bed-11eb-84a9-3011a46ae4dd.png)
+![Automobile Searching App](https://user-images.githubusercontent.com/62140337/101913798-aebf6980-3bed-11eb-882d-c15fe39ebafd.png)
+![Automobile Searching App](https://user-images.githubusercontent.com/62140337/101916388-11fecb00-3bf1-11eb-97c2-bba167f4c50c.png)
+# Automobile Searching App - A Full Stack MERN Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [Live Client](https://automobile-searching-app.netlify.app/)    
+### [Live Server](https://automobile-searching-app.herokuapp.com)    
+### [Server Source Code](https://github.com/bdmostafa/automobile-searching-app-server)
 
-## Available Scripts
+## Features
+- Site is fully mobile friendly
+- Users can search for a desired car. If no, returns "No Cars"
+- Users can add a new car, see the details, edit and delete the car info
+- All the cars are listed in MongoDB and shows in the UI
+- Searching result is loaded from state management, not loading from the DB/server
+- Different type of data parameters is added with a car like features, reviews, types, prices, stars, kilometres, model, colour and so on.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Technologies Used 
+- React.js
+- React-Hook
+- React-Router
+- React-Preloaders
+- Base64
+- Node.js
+- MongoDB
+- React Spinner
+- Express.js
+- React-Bootstrap
+- Netlify Hosting
+- Heroku Server

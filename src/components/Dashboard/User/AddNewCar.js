@@ -77,6 +77,7 @@ const AddNewCar = () => {
       <Form className="addNewForm" onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col>
+          <Form.Label>Name</Form.Label>
             <Form.Control
               name="name"
               type="text"
@@ -86,6 +87,7 @@ const AddNewCar = () => {
             {errors.name && <span className="error">Car name is required</span>}
           </Col>
           <Col>
+          <Form.Label>Features</Form.Label>
             <Form.Control
               name="features"
               type="text"
@@ -99,6 +101,7 @@ const AddNewCar = () => {
         </Row>
         <Row>
           <Col>
+          <Form.Label>Kilometers in number</Form.Label>
             <Form.Control
               name="km"
               type="number"
@@ -112,7 +115,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
-            <label>Manual type: </label>
+          <Form.Label>Manual Type</Form.Label>
             <select name="manual" ref={register({ required: true })}>
               <option value="true">Yes</option>
               <option value="false">No</option>
@@ -122,7 +125,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
-            <label>Best Seller: </label>
+          <Form.Label>Best Sellers</Form.Label>
             <select name="bestSeller" ref={register({ required: true })}>
               <option value="true">Yes</option>
               <option value="false">No</option>
@@ -135,6 +138,7 @@ const AddNewCar = () => {
 
         <Row>
           <Col>
+          <Form.Label>Main Color </Form.Label>
             <Form.Control
               name="color"
               type="text"
@@ -146,7 +150,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
-            <label>Petrol Type: </label>
+          <Form.Label>Petrol Type</Form.Label>
             <select name="petrol" ref={register({ required: true })}>
               <option value="true">Yes</option>
               <option value="false">No</option>
@@ -156,6 +160,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
+          <Form.Label>Price</Form.Label>
             <Form.Control
               name="price"
               type="number"
@@ -170,6 +175,7 @@ const AddNewCar = () => {
 
         <Row>
           <Col>
+          <Form.Label>Reviews in numbers</Form.Label>
             <Form.Control
               name="reviews"
               type="number"
@@ -181,7 +187,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
-            <label>Sport Type: </label>
+          <Form.Label>Sport type</Form.Label>
             <select name="sport" ref={register({ required: true })}>
               <option value="true">Yes</option>
               <option value="false">No</option>
@@ -191,6 +197,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
+          <Form.Label>Star out of 5</Form.Label>
             <Form.Control
               name="star"
               type="number"
@@ -205,7 +212,7 @@ const AddNewCar = () => {
 
         <Row>
           <Col>
-            {" "}
+          <Form.Label>Model Year</Form.Label>
             <Form.Control
               name="year"
               type="number"
@@ -217,6 +224,7 @@ const AddNewCar = () => {
             )}
           </Col>
           <Col>
+          <Form.Label>Upload Car Image</Form.Label>
             <Form.Control
               hidden
               name="carImage"
@@ -228,7 +236,7 @@ const AddNewCar = () => {
           </Col>
           <Col>
             <Button className="btn-project-upload" onClick={handleProjectFile}>
-              <i className="fas fa-cloud-upload-alt"></i> Upload Car Image
+              <i className="fas fa-cloud-upload-alt"></i> Upload
             </Button>
             {errors.carImage && (
               <span className="error">Sample Car Image is required</span>

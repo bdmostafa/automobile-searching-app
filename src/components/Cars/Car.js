@@ -2,6 +2,7 @@ import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Card, Col } from "react-bootstrap";
+import './Cars.css';
 
 import { useSpring, animated } from "react-spring";
 
@@ -44,7 +45,7 @@ const Car = ({ car, handleCar }) => {
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
         style={{ transform: props.xys.interpolate(trans) }}
       >
-        <Card className="card-style">
+        <Card className="card-style mb-5">
           <Card.Body>
             <Card.Img
               variant="top"
